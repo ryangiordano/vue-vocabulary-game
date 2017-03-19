@@ -42,6 +42,24 @@ export default {
                 ['愛情', 'affection'],
                 ['以心伝心', 'Read someone\'s mind']
             ],
+            qa2:[
+              ['anathema','a formal ecclesiastical curse accompanied by excommunication'],
+              ['iconoclast','someone who attacks cherished ideas or institutions'],
+              ['nadir','the lowest point of anything'],
+              ['panacea','hypothetical remedy for all ills or diseases'],
+              ['staid','characterized by dignity and propriety'],
+              ['stolid','having or revealing little emotion or sensibility'],
+              ['trenchant','having keenness and forcefulness and penetration in thought'],
+              ['upbraid','express criticism towards'],
+              ['winsome','charming in a childlike or naive way'],
+              ['mawkish','effusively or insincerely emotional'],
+              ['injunction','a judicial remedy to prohibit a party from doing something'],
+              ['grandiloquent','lofty in style'],
+              ['forbearance','good-natured tolerance of delay or incompetence'],
+              ['execrable','unequivocally detestable'],
+              ['debauch','a wild gathering involving excessive drinking'],
+
+            ],
             qaObjects: [],
             gameStarted: false,
             activeComponent: 'game-board'
@@ -51,7 +69,7 @@ export default {
     methods: {
         qaToObj() {
             let id = 0;
-            this.qa.map(entry => {
+            this.qa2.map(entry => {
                 let obj = {};
                 obj['term'] = entry[0];
                 obj['def'] = entry[1];

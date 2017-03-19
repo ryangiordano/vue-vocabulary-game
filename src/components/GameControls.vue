@@ -15,7 +15,7 @@ export default {
       gameStarted: false,
       message: null,
       successMessages: ['BOOM! Headshot!', 'You got it!', 'She called me Sparticus...I\'ll take it!', 'Correct!'],
-      failMessages: ['BRAAAAAY', 'What is this shit?  No!', 'Nice try, but no cigar', 'Wrng', 'So close...jk you were way off.']
+      failMessages: ['BRAAAAAY', 'What is this?  No!', 'Nice try, but no cigar', 'Wrng', 'So close...jk you were way off.']
     }
   },
   methods:{
@@ -26,10 +26,20 @@ export default {
     },
     correctAnswer(){
       this.message = this.successMessages[this.random(0,this.successMessages.length)];
+    },
+    wrongAnswer(){
+      this.message = this.failMessages[this.random(0,this.failMessages.length)];
+      console.log(this.message);
     }
   },
   created(){
     eventBus.$on('correctAnswer', this.correctAnswer);
+    eventBus.$on('incorrectAnswer', ()=>{
+      this.wrongAnswer();
+      setTimeout(()=>{
+        this.message = 'Select the correct answer';
+      },1500)
+    })
     eventBus.$on('newRound', ()=>{
       this.message = 'Select the correct answer';
     })

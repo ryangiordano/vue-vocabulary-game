@@ -129,5 +129,7 @@ export default {
 .btn {
     padding: 40px;
     margin: 15px;
+    white-space:pre-wrap;
+    height:200px;
 }
 </style>
